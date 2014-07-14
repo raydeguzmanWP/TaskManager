@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6185.7" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ttU-4F-0XS">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6181.2"/>
+    </dependencies>
+    <scenes>
+        <!--Task Manager-->
+        <scene sceneID="T25-uM-wFT">
+            <objects>
+                <tableViewController id="J6u-Fl-7fg" customClass="TaskManagerViewController" customModule="TaskManager" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="3gv-w0-FhY">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="MwJ-A3-QHb">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MwJ-A3-QHb" id="soj-Dn-LB7">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="sdr-JH-5jR" kind="show" identifier="edit" id="UDR-5c-IA7"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="J6u-Fl-7fg" id="jnk-cX-cTp"/>
+                            <outlet property="delegate" destination="J6u-Fl-7fg" id="Pf5-YN-VCM"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Task Manager" id="bgm-4c-KE5">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="BCi-dm-rFE">
+                            <connections>
+                                <segue destination="sdr-JH-5jR" kind="show" identifier="create" id="8CQ-Br-Vd9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0I6-x8-YnI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8" y="414"/>
+        </scene>
+        <!--Task Detail-->
+        <scene sceneID="ycq-Gw-A2d">
+            <objects>
+                <viewController id="sdr-JH-5jR" customClass="TaskDetailViewController" customModule="TaskManager" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uJL-fS-Ts7"/>
+                        <viewControllerLayoutGuide type="bottom" id="9zM-sA-XKn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Fbr-13-GtU">
+                        <rect key="frame" x="0.0" y="64" width="480" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UlO-8g-JIM">
+                                <rect key="frame" x="65" y="112" width="355" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="UlO-8g-JIM" secondAttribute="trailing" constant="60" id="7BE-SA-XA1"/>
+                            <constraint firstItem="UlO-8g-JIM" firstAttribute="leading" secondItem="Fbr-13-GtU" secondAttribute="leading" constant="65" id="WLz-Nh-FsR"/>
+                            <constraint firstItem="UlO-8g-JIM" firstAttribute="top" secondItem="uJL-fS-Ts7" secondAttribute="bottom" constant="48" id="aRn-5a-Tn6"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Task Detail" id="ZRI-Ti-998">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="PGo-Gp-nsn">
+                            <connections>
+                                <action selector="cancel:" destination="sdr-JH-5jR" id="yfE-cZ-Evd"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="fpl-1C-fQS">
+                            <connections>
+                                <action selector="done:" destination="sdr-JH-5jR" id="I40-gl-I4A"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="txtDesc" destination="UlO-8g-JIM" id="efZ-03-bcO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Di2-su-TVn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="552" y="414"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Qug-G3-q1n">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ttU-4F-0XS" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5bM-b0-vYJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="J6u-Fl-7fg" kind="relationship" relationship="rootViewController" id="xcm-ks-Wg7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="viM-mX-fQN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="150" y="-163"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="UDR-5c-IA7"/>
+    </inferredMetricsTieBreakers>
+</document>

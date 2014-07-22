@@ -13,7 +13,7 @@ class TaskDetailViewController: UIViewController {
 
     let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
     
-    @IBOutlet var txtDesc: UITextField
+    @IBOutlet var txtDesc: UITextField!
     
     var task: Tasks? = nil
     

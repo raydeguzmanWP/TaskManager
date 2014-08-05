@@ -70,8 +70,8 @@ class TaskManagerViewController: UITableViewController, NSFetchedResultsControll
     
     override func tableView(tableView: UITableView!, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath!) {
         let managedObject:NSManagedObject = fetchedResultController.objectAtIndexPath(indexPath) as NSManagedObject
-        managedObjectContext.deleteObject(managedObject)
-        managedObjectContext.save(nil)
+        managedObjectContext?.deleteObject(managedObject)
+        managedObjectContext?.save(nil)
     }
     
     func controllerDidChangeContent(controller: NSFetchedResultsController!) {

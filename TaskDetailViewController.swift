@@ -38,12 +38,12 @@ class TaskDetailViewController: UIViewController {
     }
     
     func dismissViewController() {
-        navigationController.popViewControllerAnimated(true)
+        navigationController?.popViewControllerAnimated(true)
     }
     
     func createTask() {
-        let entityDescripition = NSEntityDescription.entityForName("Tasks", inManagedObjectContext: managedObjectContext)
-        let task = Tasks(entity: entityDescripition, insertIntoManagedObjectContext: managedObjectContext)
+        let entityDescripition = NSEntityDescription.entityForName("Tasks", inManagedObjectContext: managedObjectContext!)
+        let task = Tasks(entity: entityDescripition!, insertIntoManagedObjectContext: managedObjectContext)
         task.desc = txtDesc.text
         managedObjectContext?.save(nil)
     }

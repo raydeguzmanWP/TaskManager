@@ -66,7 +66,7 @@ class TaskManagerViewController: UITableViewController, NSFetchedResultsControll
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
             var cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
             let task = fetchedResultController.objectAtIndexPath(indexPath) as Tasks
-            cell.textLabel?.text = task.desc
+            cell.textLabel.text = task.desc
             return cell
     }
     

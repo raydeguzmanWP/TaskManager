@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.8" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ttU-4F-0XS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ttU-4F-0XS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
         <!--Task Manager-->
@@ -19,7 +19,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="sdr-JH-5jR" kind="show" identifier="edit" id="UDR-5c-IA7"/>
+                                    <segue destination="0I2-Y7-LIM" kind="show" identifier="edit" id="UDR-5c-IA7"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -31,14 +31,14 @@
                     <navigationItem key="navigationItem" title="Task Manager" id="bgm-4c-KE5">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="BCi-dm-rFE">
                             <connections>
-                                <segue destination="sdr-JH-5jR" kind="show" identifier="create" id="8CQ-Br-Vd9"/>
+                                <segue destination="0I2-Y7-LIM" kind="presentation" identifier="create" id="8CQ-Br-Vd9"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0I6-x8-YnI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8" y="414"/>
+            <point key="canvasLocation" x="-188" y="624"/>
         </scene>
         <!--Task Detail-->
         <scene sceneID="ycq-Gw-A2d">
@@ -83,7 +83,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Di2-su-TVn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="552" y="414"/>
+            <point key="canvasLocation" x="1512" y="630"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Qug-G3-q1n">
@@ -102,6 +102,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="viM-mX-fQN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="150" y="-163"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="VPm-yx-jzI">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0I2-Y7-LIM" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GAD-KU-KqR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="sdr-JH-5jR" kind="relationship" relationship="rootViewController" id="AxL-J6-xuK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y9d-tr-DQ6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="700" y="630"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

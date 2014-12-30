@@ -23,6 +23,7 @@ class TaskManagerViewController: UITableViewController, NSFetchedResultsControll
         fetchedResultController.performFetch(nil)
     }
     
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if segue.identifier == "edit" {
             let cell = sender as UITableViewCell

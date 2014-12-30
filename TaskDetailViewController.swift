@@ -38,7 +38,10 @@ class TaskDetailViewController: UIViewController {
     }
     
     func dismissViewController() {
-        navigationController?.popViewControllerAnimated(true)
+        
+            dismissViewControllerAnimated(true, completion: nil)
+        
+        //navigationController?.popViewControllerAnimated(true)
     }
     
     func createTask() {
